@@ -1,0 +1,326 @@
+import Phaser from "phaser";    
+import textData from "../data/textData";
+import PreloaderScene from "../preloaderScene";
+
+export default class lagoScene extends Phaser.Scene {
+    constructor() {
+        super({ key: "lagoScene" });
+    }   
+    create() {
+        this.add.image(960, 540, 'fondoMatadero');
+        this.add.image(960, 540, 'degradado_ruinas');
+        //logo playtur    
+        const logo = this.add.image(1780, 50, 'logo-playtur');
+
+
+        //logo carhue
+        const logoCarhue = this.add.image(120, 50, 'logoCarhue');
+              logoCarhue.setScale(.3); 
+              logoCarhue.setInteractive();
+              logoCarhue.on('pointerdown', () => {
+                this.scene.start("homeScene");
+              });
+
+
+
+              let txtReserva = this.add.text(580,80, textData.txtMatadero, {fontFamily:  'Metropolis-Bold, "Times New Roman", Tahoma, serif', fontSize: 60, color: '#ffffff '});
+
+              let txttituloreserva = this.add.text(280, 280, 'La Villa Turística Lago Epecuén', {fontFamily:  'Metropolis-Bold, "Times New Roman", Tahoma, serif', fontSize: 24, color: '#000000 '}); 
+
+              let txtdescripreserva = this.add.text(280, 330, "El Lago Epecuén era conocido desde épocas lejanas por sus aguas mineralizadas, utilizadas para enfermedades reumáticas, de piel o tonificantes del organismo. La primera referencia del Lago Epecuén fue dada en 1780 por el Piloto De La Real Marina Pablo Zizur en viaje de recolección de sal a las Salinas Grandes, (Hoy La Pampa). Al pasar por sus costas la bautiza Laguna San Lucas, coincidentemente el Patrono de la Medicina. Con la ocupación del territorio indígena por parte del Estado Argentino la memoria oral y los comentarios elogiosos hacen que comiencen a arribar personas a darse baños en sus costas. Desde 1899 con la llegada del ferrocarril, Carhué se vio inmerso en una fiebre turística poblándose de importantes hoteles y comercios. En 1909 la Provincia de Buenos Aires le da un respaldo científico-médico a sus aguas milagrosas enviando una comitiva de especialistas que revelará sus propiedades para el mundo. A partir de allí y especialmente en la década de 1920, se comienza a vislumbrar un gran futuro para el Lago Epecuén. Así, el 23 de enero de 1921 se inaugura el primer Balneario en sus costas, distante a 8 km de Carhué que se denominará “Mar de Epecuen”, comenzándose a lotear tierras a sus alrededores para conformar un pueblo. El ritmo de crecimiento se hizo importantísimo, se construían hoteles, espigones hacia dentro del lago, lujosas residencias y nacían empresas explotadoras de sal, de venta de barros curativos y jabones. ", {      
+                fontFamily: 'Metropolis, "Times New Roman", Tahoma, serif',
+                fontSize: 20,
+                color: '#000000',
+                wordWrap: {
+                    width: 1300, 
+                    useAdvancedWrap: true 
+                }});
+
+                let txtdescripreserva1 = this.add.text(280, 600, "Al lado de los hoteles comienzan a establecerse trabajadores y propietarios y así, para 1930 la Villa Lago Epecuén ya contaba con Iglesia, una Escuela y todos los servicios necesarios para el desarrollo de un pueblo.  ", {      
+                  fontFamily: 'Metropolis, "Times New Roman", Tahoma, serif',
+                  fontSize: 20,
+                  color: '#000000',
+                  wordWrap: {
+                      width: 1300, 
+                      useAdvancedWrap: true 
+                  }});
+  
+                  let txtdescripreserva2 = this.add.text(280, 655, "Su crecimiento no cesaría y en la década del 70 llegará a recibir a 25.000 turistas con 6.000 plazas hoteleras declaradas y sumando 250 establecimientos comerciales. La población estable de la Villa Lago Epecuén era de alrededor de 1.200 personas. ", {      
+                    fontFamily: 'Metropolis, "Times New Roman", Tahoma, serif',
+                    fontSize: 20,
+                    color: '#000000',
+                    wordWrap: {
+                        width: 1300, 
+                        useAdvancedWrap: true 
+                    }});
+
+                    let txtdescripreserva3 = this.add.text(280, 710, "La laguna de Epecuen es una evaporita, es decir recibe excedentes de agua por lluvias y arroyos y en las épocas secas los evapora, generando así el decantamiento y conformando su única salinidad y mineralización natural. Por más de 60 años el lago continuó con su rutina de crecidas y sequías tal su función ancestral, sin embargo ésta afectaba mucho las inversiones turísticas, dependiendo éstas de las buenas lluvias que disolvían el manto de sal haciendo el baño placentero y porque el agua quedaba cerca de los espigones y servicios. Cuando las lluvias no acompañaban las temporadas fracasaban, eran necesario hacer pozos para que filtre el agua y la gente pueda sumergirse en las aguas del lago, lo que no era muy apreciado por los turistas en busca de salud. En los años 70´s las autoridades provinciales se hicieron eco de los reclamos que venían desde los 30’s para estabilizar el caudal de la laguna, efectuando obras hidráulicas que por diversas cuestiones políticas desde 1976 no se continuaron. Tan solo un canal recolector de aguas de otra cuenca hídrica fue la obra culminada que sumado a las abundantes lluvias caídas en 1980, hicieron que se tenga que levantar un terraplén para defensa del pueblo que comenzaba a correr peligro de inundación. El sistema natural estaba desequilibrado por la mano del hombre. Como la laguna Epecuen es la última laguna, y por ende más baja, del llamado sistema de Lagunas Encadenadas del Sudoeste, no posee ninguna salida de la gran hondonada en que se halla. Entre 1980 y 1985 las lluvias y el ingreso sin control del agua por el canal fueron condenando al pueblo de Villa Lago Epecuen, el que sobrevivía protegido por una muralla de 4 metros de altura.  ", {      
+                      fontFamily: 'Metropolis, "Times New Roman", Tahoma, serif',
+                      fontSize: 20,
+                      color: '#000000',
+                      wordWrap: {
+                          width: 1300, 
+                          useAdvancedWrap: true 
+                      }});
+  
+                      let txtdescripreserva4 = this.add.text(280, 1020, "Un 10 de noviembre de 1985 ese terraplén no soportó el embate de la laguna y el pueblo comenzó a ser evacuado, perdiéndose 70 años de historia turística termal. Para el invierno de 1993 el pueblo de Villa Lago Epecuén estaba sumergido bajo 7 metros de agua. Gracias a obras encaradas en esos años que impidieron el ingreso de agua a la laguna, lentamente fue escurriéndose dejando al descubierto las ruinas lo que alguna vez fue el más pujante centro termal de Argentina.  ", {      
+                        fontFamily: 'Metropolis, "Times New Roman", Tahoma, serif',
+                        fontSize: 20,
+                        color: '#000000',
+                        wordWrap: {
+                            width: 1300, 
+                            useAdvancedWrap: true 
+                        }});
+
+
+                        
+
+              let fondoBlanco = this.add.graphics();  
+              fondoBlanco.fillStyle(0xffffff, 0.3);
+              fondoBlanco.fillRoundedRect(225, 200, 1450, 2000, 20);
+              
+              let panel = this.add.container(0,0);
+              panel.setSize(1500,2000);
+              panel.setInteractive(new Phaser.Geom.Rectangle(0, 0, 400, 400), Phaser.Geom.Rectangle.Contains);
+              
+              panel.add([fondoBlanco, txtReserva, txttituloreserva, txtdescripreserva, txtdescripreserva1, txtdescripreserva2, txtdescripreserva3, txtdescripreserva4]);
+              
+                  // Configura el evento de scroll
+                  this.input.on('wheel', function (pointer, gameObjects, deltaX, deltaY, deltaZ) {
+                    panel.y -= deltaY;
+                });
+
+              /**
+     * INICIO BOTON ACTIVIDADES
+     */
+    //boton actividades
+    const actividades = this.add.image(1550, 930, 'actividades');
+    actividades.setScale(1.34); 
+    actividades.setInteractive();
+    actividades.on('pointerdown', () => {
+      this.scene.start('actividadesScene');
+      console.log('soy boton actividades')
+    });
+
+    actividades.on('pointerover', () => {
+    actividades.setTint(0xffcc00)
+    textoActividades.setVisible(true);
+  });
+    actividades.on('pointerout', () => {
+    actividades.clearTint();
+    textoActividades.setVisible(false);
+  });
+
+
+let textoActividades = this.add.text(1500, 1025, 'Actividades', {
+font: '14px Metropolis',
+fill: '#ffffff',
+});
+textoActividades.setVisible(false);
+ 
+/**
+* FIN BOTON ACTIVIDADES
+*/      
+
+
+/**
+* INICIO BOTON ALOJAMIENTOS
+*/
+//boton alojamiento
+const alojamiento = this.add.image(1242, 1003, 'alojamiento');
+    alojamiento.setScale(1.34); 
+    alojamiento.setInteractive();
+    alojamiento.on('pointerdown', () => {
+      this.scene.start('alojamientoScene');
+      console.log('soy boton alojamiento')
+    });
+
+    alojamiento.on('pointerover', () => {
+    alojamiento.setTint(0xffcc00)
+    textoAloj.setVisible(true);
+  });
+    alojamiento.on('pointerout', () => { 
+    alojamiento.clearTint();
+    textoAloj.setVisible(false);
+  });
+// Texto que se mostrará cuando el cursor pase por encima
+let textoAloj = this.add.text(1200, 1025, 'Alojamiento', {
+font: '14px Metropolis',
+fill: '#ffffff',
+});
+textoAloj.setVisible(false);
+
+/**
+* FIN BOTON ACTIVIDADES
+*/
+
+
+/** 
+* INICIO BOTON TRANSPORTE
+*/
+
+//boton transporte
+const transporte = this.add.image(1068, 1020, 'tranporte');
+    transporte.setScale(1.34); 
+    transporte.setInteractive();
+    transporte.on('pointerdown', () => {
+      this.scene.start('transporteScene');
+      console.log('soy boton transporte')
+    });
+
+transporte.on('pointerover', () => {
+    transporte.setTint(0xffcc00)
+    textoTrans.setVisible(true);
+});
+transporte.on('pointerout', () => { 
+  transporte.clearTint();
+  textoTrans.setVisible(false);
+});
+
+// Texto que se mostrará cuando el cursor pase por encima
+let textoTrans = this.add.text(1035, 1025, 'Ubicación', {
+  font: '14px Metropolis',
+  fill: '#ffffff',
+  });
+  textoTrans.setVisible(false);
+
+/**
+* FIN BOTON TRANSPORTE
+*/ 
+
+/**
+* INICIO BOTON RUINAS
+*/
+
+//boton ruinas
+const ruinas = this.add.image(205, 975, 'ruinas');
+ruinas.setScale(1.34); 
+ruinas.setInteractive();
+ruinas.on('pointerdown', () => {
+this.scene.start('ruinasScene');
+console.log('soy boton ruinas')
+});
+
+ruinas.on('pointerover', () => {
+  ruinas.setTint(0xffcc00)
+  textoRuinas.setVisible(true);
+});
+ruinas.on('pointerout', () => { 
+ruinas.clearTint();
+textoRuinas.setVisible(false);
+});
+
+// Texto que se mostrará cuando el cursor pase por encima
+let textoRuinas = this.add.text(130, 1025, 'Ruinas Villa Epecuen', {
+  font: '14px Metropolis',
+  fill: '#ffffff',
+  });
+  textoRuinas.setVisible(false);
+
+/**
+* FIN BOTON RUINAS
+*/
+
+/**
+* INICIO BOTON MATADERO
+*/
+//boton Matadero
+const matadero = this.add.image(625, 963, 'Matadero');
+    matadero.setScale(1.34); 
+    matadero.setInteractive();
+    matadero.on('pointerdown', () => {
+      this.scene.start('lagoScene');
+      console.log('soy boton matadero')
+    });
+
+matadero.on('pointerover', () => {  
+  matadero.setTint(0xffcc00)
+  textoMatadero.setVisible(true);
+});
+matadero.on('pointerout', () => {   
+matadero.clearTint();
+textoMatadero.setVisible(false);
+} );
+
+
+let textoMatadero = this.add.text(550, 1025, 'Matadero + Lago Epecuen', {
+  font: '14px Metropolis',
+  fill: '#ffffff',
+  });
+  textoMatadero.setVisible(false);
+
+/**
+* FIN BOTON MATADERO
+*/
+
+/**
+* INICIO BOTON RESERVA NATURAL
+*/
+
+//boton reserva natural
+const reservaNatural = this.add.image(918, 1012, 'reservaNatural');
+    reservaNatural.setScale(1.34); 
+    reservaNatural.setInteractive();
+    reservaNatural.on('pointerdown', () => {
+      this.scene.start('reservaScene');
+      console.log('soy boton reserva natural')
+    });
+
+  reservaNatural.on('pointerover', () => {  
+  reservaNatural.setTint(0xffcc00)
+  textoReserva.setVisible(true);
+  console.log('hola')
+});
+reservaNatural.on('pointerout', () => {
+reservaNatural.clearTint();
+textoReserva.setVisible(false);
+});
+
+
+let textoReserva = this.add.text(860, 1025, 'Reserva Natural', {
+  font: '14px Metropolis',
+  fill: '#ffffff',
+  });
+  textoReserva.setVisible(false);
+
+/**
+* FIN BOTON RESERVA NATURAL
+*/
+
+/**
+* INICIO BOTON GASTRONOMIA
+*/
+
+//boton gastronomia
+const gastronomia = this.add.image(1840, 1010, 'gastronomia');
+    gastronomia.setScale(1.34); 
+    gastronomia.setInteractive();
+    gastronomia.on('pointerdown', () => {
+      this.scene.start('gastronomiaScene');
+      console.log('soy boton gastronomia')
+    });  
+
+gastronomia.on('pointerover', () => {
+  gastronomia.setTint(0xffcc00)
+  textoGastronomia.setVisible(true);
+});  
+gastronomia.on('pointerout', () => {
+gastronomia.clearTint();
+textoGastronomia.setVisible(false);
+});
+
+
+let textoGastronomia = this.add.text(1790, 1025, 'Gastronomia', {
+  font: '14px Metropolis',
+  fill: '#ffffff',
+  });
+  textoGastronomia.setVisible(false);
+
+/**
+* FIN BOTON GASTRONOMIA
+*/
+    }
+    
+    update() {
+    }
+}
